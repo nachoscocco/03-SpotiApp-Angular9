@@ -9,6 +9,14 @@ hr {
     border-color: white;
 }
 
+a {
+    color: #1c852d;
+}
+
+.link:hover {
+    color: #00FF00;
+}
+
 .puntero {
     cursor: pointer;
 }

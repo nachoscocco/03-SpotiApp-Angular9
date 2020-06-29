@@ -1,1 +1,28 @@
-<p>artista works!</p>
+<app-loading *ngIf="loading">
+</app-loading>
+
+
+<div class="row animated fadeIn" *ngIf="!loading">
+
+    <div class="col-2">
+        <img [src]="artista.images | noimage" class="img-thumbnail img-circle" alt="">
+    </div>
+
+    <div class="col">
+        <h2>{{artista.name}}</h2>
+        <p>
+            <a [href]="artista.external_urls.spotify" target="_blank" class="link">
+                Ir a la pagina del Artista
+            </a>
+
+        </p>
+    </div>
+
+    <div class="col-4 text-right">
+
+        <button routerLink='/search' class='btn btn-outline-success'>Regresar</button>
+
+    </div>
+
+
+</div>
