@@ -23,6 +23,7 @@
 
 //PIPES
   import { NoimagePipe } from './pipes/noimage.pipe';
+  import { DomseguroPipe } from "./pipes/domseguro.pipe";
 
 
 
@@ -35,7 +36,8 @@
     NavbarComponent,
     TarjetasComponent,
     LoadingComponent,
-    NoimagePipe
+    NoimagePipe,
+    DomseguroPipe
     
     
   ],

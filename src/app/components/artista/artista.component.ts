@@ -12,6 +12,8 @@ export class ArtistaComponent  {
    
   loading: boolean;
   artista: any={};
+  tracks: any []= [];
+
   constructor( private rutaActiva : ActivatedRoute,
                private spotiapp: SpotifyService) { 
 
@@ -20,6 +22,8 @@ export class ArtistaComponent  {
 
     this.rutaActiva.params.subscribe( params=>{
       this.getArtista(params['id']);
+      this.getTopTracks(params['id']);
+
     });
   }
 
@@ -27,11 +31,21 @@ export class ArtistaComponent  {
     
     this.spotiapp.getArtista(id)
       .subscribe(artistaObtenido =>{
-         console.log(artistaObtenido);
+         /* console.log(artistaObtenido); */
          this.artista = artistaObtenido;
         this.loading = false;
-      })
+      });
+  }
+  
+  getTopTracks(id:string){
+
+    this.spotiapp.getTopTracks(id)
+      .subscribe(topTracks =>{
+         console.log(topTracks); 
+        this.tracks = topTracks;
+      });
 
   }
+
 
 }

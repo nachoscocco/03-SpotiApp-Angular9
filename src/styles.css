@@ -13,6 +13,15 @@ a {
     color: #1c852d;
 }
 
+tr {
+    color: white;
+    font-size: 20px;
+}
+
+tbody {
+    color: silver;
+}
+
 .link:hover {
     color: #00FF00;
 }

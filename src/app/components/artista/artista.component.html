@@ -26,3 +26,36 @@
 
 
 </div>
+
+<div class="row animated fadeIn  m-3 " *ngIf="!loading">
+
+    <div class=" col ">
+        <table class="table  text-center ">
+
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Album</th>
+                    <th>Cancion</th>
+                    <th>Vista previa</th>
+                </tr>
+            </thead>
+
+            <tbody *ngFor="let item of tracks text-center">
+                <th>
+                    <img class="img-thumb" [src]="item.album.images | noimage " alt="image album ">
+                </th>
+                <th>{{item.album.name}} </th>
+                <th>{{item.name}}</th>
+                <th>
+                    <!-- <audio [src]="item.preview_url" controls></audio> -->
+                    <iframe [src]=" item.uri | domseguro " width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                </th>
+                <!-- spotify:track:10igKaIKsSB6ZnWxPxPvKO -->
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
